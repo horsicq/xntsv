@@ -1,0 +1,4 @@
+TARGETNAME=memoryaccess64
+TARGETPATH=..\..\build
+TARGETTYPE=DRIVER
+SOURCES=..\memoryaccess.c
