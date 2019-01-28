@@ -20,6 +20,7 @@ rm -f %SOURCE_PATH%\release\%BUILD_NAME%
 mkdir %SOURCE_PATH%\release\%BUILD_NAME%
 mkdir %SOURCE_PATH%\release\%BUILD_NAME%\plugins
 mkdir %SOURCE_PATH%\release\%BUILD_NAME%\plugins\platforms
+mkdir %SOURCE_PATH%\release\%BUILD_NAME%\sqldrivers
 
 copy %SOURCE_PATH%\build\release\xntsv64.exe %SOURCE_PATH%\release\%BUILD_NAME%\
 copy %SOURCE_PATH%\build\gpm64.dll %SOURCE_PATH%\release\%BUILD_NAME%\
@@ -31,6 +32,7 @@ copy %QT_PATH64%\bin\Qt5Gui.dll %SOURCE_PATH%\release\%BUILD_NAME%\
 copy %QT_PATH64%\bin\Qt5Core.dll %SOURCE_PATH%\release\%BUILD_NAME%\
 copy %QT_PATH64%\bin\Qt5Sql.dll %SOURCE_PATH%\release\%BUILD_NAME%\
 copy %QT_PATH64%\plugins\platforms\qwindows.dll %SOURCE_PATH%\release\%BUILD_NAME%\plugins\platforms\
+copy %QT_PATH64%\plugins\sqldrivers\qsqlite.dll %SOURCE_PATH%\release\%BUILD_NAME%\sqldrivers\
 
 cd %SOURCE_PATH%\release
 if exist %BUILD_NAME%_%XNTSV_VERSION%.zip del %BUILD_NAME%_%XNTSV_VERSION%.zip

@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2018 hors<horsicq@gmail.com>
+// Copyright (c) 2017-2019 hors<horsicq@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -27,7 +27,7 @@ About::About(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->labelVersion->setText(QString("XNTSV ver %1").arg(XNTSV_APPLICATIONVERSION));
+    ui->labelVersion->setText(QString("XNTSV v%1").arg(XNTSV_APPLICATIONVERSION));
 }
 
 About::~About()

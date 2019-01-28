@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2018 hors<horsicq@gmail.com>
+// Copyright (c) 2017-2019 hors<horsicq@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -24,14 +24,16 @@
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication::addLibraryPath("plugins");
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+
+    QString sLibraryPath=QString(argv[0]).replace("\\","/");
+    sLibraryPath=sLibraryPath.section("/",0,-2)+QDir::separator()+"plugins";
+    QCoreApplication::addLibraryPath(sLibraryPath);
 
     QCoreApplication::setOrganizationName(XNTSV_ORGANIZATIONNAME);
     QCoreApplication::setOrganizationDomain(XNTSV_ORGANIZATIONDOMAIN);
     QCoreApplication::setApplicationName(XNTSV_APPLICATIONNAME);
     QCoreApplication::setApplicationVersion(XNTSV_APPLICATIONVERSION);
-
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QApplication a(argc, argv);
 

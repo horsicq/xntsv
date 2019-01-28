@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2018 hors<horsicq@gmail.com>
+// Copyright (c) 2017-2019 hors<horsicq@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@
 #define XNTSV_VERSION_H
 
 #define XNTSV_APPLICATIONNAME "XNTSV"
-#define XNTSV_APPLICATIONVERSION "2.00"
+#define XNTSV_APPLICATIONVERSION "2.01"
 #define XNTSV_ORGANIZATIONNAME "NTInfo"
 #define XNTSV_ORGANIZATIONDOMAIN "ntinfo.biz"
 

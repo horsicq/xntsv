@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2018 hors<horsicq@gmail.com>
+// Copyright (c) 2017-2019 hors<horsicq@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -29,11 +29,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->setupUi(this);
 
-    setWindowTitle(QString("XNTSV ver %1").arg(XNTSV_APPLICATIONVERSION));
+    setWindowTitle(QString("XNTSV v%1").arg(XNTSV_APPLICATIONVERSION));
 
     //    ui->textBrowserResult->setStyleSheet("background-color:rgb(150,147,88);");
 
-    hPID=0;
+    hPID=nullptr;
     bKernel=false;
     //bIsProcess64=false;
 
@@ -211,7 +211,7 @@ void MainWindow::getProcesses()
 
     //    ui->tableProcesses->clearContents();
 
-    baProcesses.resize(100000);
+    baProcesses.resize(200000);
     baProcesses.fill(0);
     nDataSize=_GetProcesses(baProcesses.data(),baProcesses.size());
 
