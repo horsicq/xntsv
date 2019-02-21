@@ -54,7 +54,6 @@ void Prototype::on_checkBoxShowComments_stateChanged(int arg1)
     if(!(ui->checkBoxShowComments->isChecked()))
     {
         ui->textEditPrototype->setText(removeComments(ui->textEditPrototype->toPlainText()));
-
     }
     else
     {
@@ -150,7 +149,6 @@ QString Prototype::offsetAsHEX(QString sText)
 
     }
     while(!sLine.isNull());
-
 
     return sResult;
 }

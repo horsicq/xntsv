@@ -73,7 +73,6 @@ void DialogMemoryMap::reload()
     ui->tableWidgetMemoryMap->setRowCount(listMemoryMap.count());
     ui->tableWidgetMemoryMap->setColumnCount(7);
 
-
     QStringList labels;
     labels.append("BaseAddress");
     labels.append("AllocationBase");

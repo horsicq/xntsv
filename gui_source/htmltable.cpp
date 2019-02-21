@@ -43,9 +43,7 @@ void HtmlTable::addBR()
 
 void HtmlTable::addRecord(const QString &s1,const QString &s2=QString(),const QString &s3=QString(),const QString &s4=QString(),const QString &s5=QString(),const QString &s6=QString(),const QString &s7=QString())
 {
-
     //	QString sReference;
-
     //    sTable.append(QString("<a name=\"%1\">").arg(s1));
 
     sTable.append("<tr>");
@@ -119,10 +117,8 @@ void HtmlTable::addTab(const QString &sString)
     sTable.append("</td></tr></table>");
 }
 
-
 void HtmlTable::addHeader(const QString &s1,const QString &s2=QString(),const QString &s3=QString(),const QString &s4=QString(),const QString &s5=QString(),const QString &s6=QString(),const QString &s7=QString())
 {
-
     QString sReference;
 
     sTable.append("<tr>");

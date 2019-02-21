@@ -33,7 +33,6 @@ class DialogMemoryMap;
 class DialogMemoryMap : public QDialog
 {
     Q_OBJECT
-
 #ifndef _WIN64
     struct _MEMORY_BASIC_INFORMATION
     {
@@ -59,7 +58,6 @@ class DialogMemoryMap : public QDialog
         unsigned int __alignment2;
     };
 #endif
-
 public:
     explicit DialogMemoryMap(QWidget *parent = 0);
     ~DialogMemoryMap();
@@ -68,17 +66,13 @@ private slots:
     void reload();
     void on_pushButtonClose_clicked();
     QString getProtect(unsigned int nValue);
-
     void on_pushButtonReload_clicked();
-
 private:
     Ui::DialogMemoryMap *ui;
-
     int (* umMemoryQuery)(void *,void *,char *,int);
     QByteArray(* ReadFromMemory)(QVariant, unsigned long long, unsigned long long, bool *);
     void *hPID;
     QAction *actHex;
-
     bool bIs64;
 };
 

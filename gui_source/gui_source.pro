@@ -7,9 +7,7 @@ QT       += core widgets sql
     TARGET = xntsv64
 }
 
-
 TEMPLATE = app
-
 
 SOURCES += \ 
     prototype.cpp \

@@ -41,9 +41,7 @@ public:
     void setTitle(QString sText);
 
 private slots:
-
     void on_pushButtonOK_clicked();
-
     void on_checkBoxShowComments_stateChanged(int arg1);
     void on_checkBoxOffsetAsHEX_stateChanged(int arg1);
     QString removeComments(QString sText);

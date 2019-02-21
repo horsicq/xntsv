@@ -39,7 +39,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->textBrowserResult,SIGNAL(anchorClicked(const QUrl &)),this,SLOT(anchor(const QUrl &)));
 
-
     lib=new QLibrary;
 
 #ifdef _WIN64
@@ -90,8 +89,6 @@ MainWindow::MainWindow(QWidget *parent) :
 #ifdef __X64
         //umIsProcess64=(um_IsProcess64)lib->resolve("um_IsProcess64");;
 #endif
-
-
         if(SetPrivilege((char *)("SeDebugPrivilege"),true))
         {
             addLog("Set Debug Privilege");
@@ -102,7 +99,6 @@ MainWindow::MainWindow(QWidget *parent) :
         {
             QMessageBox::critical(0, "Need Admin Privs", "!");
         }
-
 
 #ifdef __X64
         sDataBaseName=QString("%1_%2_64.db3").arg(GetBuildNumber()).arg(GetSPNumber());
@@ -210,7 +206,6 @@ void MainWindow::getProcesses()
     __GetProcesses _GetProcesses=(__GetProcesses)lib->resolve("__GetProcesses");
 
     //    ui->tableProcesses->clearContents();
-
     baProcesses.resize(200000);
     baProcesses.fill(0);
     nDataSize=_GetProcesses(baProcesses.data(),baProcesses.size());
@@ -261,7 +256,6 @@ void MainWindow::getInfo(void *nPID)
 
     ui->textBrowserResult->setHtml("");
 
-
     history.clear();
 
     if(hPID)
@@ -294,7 +288,6 @@ void MainWindow::getInfo(void *nPID)
 
     ui->pushButtonMemoryMap->setEnabled(hPID!=0);
     ui->pushButtonReload->setEnabled(hPID!=0);
-
 
     if(hPID)
     {
@@ -333,9 +326,7 @@ void MainWindow::getInfo(void *nPID)
             //            pAddress=kmGetKPCR(hPID);
             //            sLink=QString("%1#%2#%3.html").arg("struct _KPCR").arg(QString("Kernel Processor Control Region(0)")).arg(addressToString(pAddress));
             //            ht.addRecord("",QString("Kernel Processor Control Region(0)"),makeLink(addressToString(pAddress),sLink),"","","","");
-
         }
-
 
         addLog(QString("Open process(PID=%1)").arg((int)nPID));
         baData.resize(4*1000);
@@ -422,8 +413,6 @@ void MainWindow::anchor(const QUrl &link)
     // Get element size
     if(sElementType=="Image::PE")
     {
-
-
         if(pAddress)
         {
             //            qDebug(QString("test1 %1").arg((int)pAddress,0,16).toAscii().data());
@@ -463,7 +452,6 @@ void MainWindow::anchor(const QUrl &link)
                 sResult=addTable(pAddress,0,sElementType,sElementName,baData.data(),baData.size());
             }
         }
-
     }
 
     ui->lineEditName->setText(sElementName);
@@ -471,7 +459,6 @@ void MainWindow::anchor(const QUrl &link)
     ui->lineEditSize->setText(QString("0x%1").arg((unsigned int)(nElementSize*nIndex),8,16,QChar('0')));
     ui->comboBoxType->setItemText(0,sElementType);
     ui->comboBoxType->setCurrentIndex(0);
-
 
     ui->textBrowserResult->setHtml(sResult);
     history.addRecord(sTitle+"&"+sResult);
@@ -498,7 +485,6 @@ void MainWindow::on_pushButtonStart_clicked()
 //        getInfo((void *)sPID.toUInt(&bTemp,16));
 //    }
 
-
     ui->pushButtonBack->setEnabled(false);
     ui->pushButtonForward->setEnabled(false);
 }
@@ -524,7 +510,6 @@ void MainWindow::on_pushButtonBack_clicked()
     int nIndex=getIndex(sElementName);
     sElementSize=QString("0x%1").arg((unsigned int)(nElementSize*nIndex),8,16,QChar('0'));
     ui->lineEditSize->setText(sElementSize);
-
 
     ui->lineEditName->setText(sElementName);
     ui->lineEditAddress->setText(sAddress);
@@ -638,8 +623,6 @@ int MainWindow::getElementSize(const QString &sElementType)
         }
     }
 
-
-
     return nElementSize;
 }
 
@@ -741,18 +724,13 @@ QString MainWindow::addTable(void *pAddress,int nStartOffset, const QString sEle
             sName=query.value(2).toString();
             sComment=query.value(3).toString();
 
-
-
 #ifndef __X64
             pCurrentAddress=(void *)((int)pAddress+nOffset);
 #else
             pCurrentAddress=(void *)((long long)pAddress+nOffset);
 #endif
-
-
             nSize=getElementSize(sType);
             nShow=getElementShow(sType);
-
 
             if(sComment.contains("#LE_LDTE0"))
             {
@@ -772,7 +750,6 @@ QString MainWindow::addTable(void *pAddress,int nStartOffset, const QString sEle
             if(sComment.contains("#LE_YS"))
             {
                 sComment.replace("#LE_YS",getListEntryLinks(pCurrentAddress,sElementType,-nOffset));
-
             }
 
             if(sComment.contains("#UNICODE_STRING"))
@@ -799,7 +776,6 @@ QString MainWindow::addTable(void *pAddress,int nStartOffset, const QString sEle
             // Ubrat 3 i 4, a vmesto ih ispolzovat kommentarii v db
             if((nShow==0)||(nShow==3)||(nShow==4))
             {
-
                 sLink=QString("%1#%2#%3").arg(sType).arg(sName).arg(addressToString(pCurrentAddress));
 
                 sValue="...";
@@ -819,7 +795,6 @@ QString MainWindow::addTable(void *pAddress,int nStartOffset, const QString sEle
                 if(sName.contains(":"))
                 {
                     nBitCount=sName.section(":",1,1).toInt();
-
                 }
                 else
                 {
@@ -893,7 +868,6 @@ QString MainWindow::addTable(void *pAddress,int nStartOffset, const QString sEle
                         unValue=unValue&(~nMask);
                     }
 
-
                     sValue=QString("0x%1").arg(unValue,8,16,QChar('0'));
                 }
                 else if(nSize==8)
@@ -916,7 +890,6 @@ QString MainWindow::addTable(void *pAddress,int nStartOffset, const QString sEle
 
                         un64Value=un64Value&(~nMask);
                     }
-
 
                     sValue=QString("0x%1").arg(un64Value,16,16,QChar('0'));
                 }
@@ -1032,7 +1005,6 @@ QString MainWindow::addTable(void *pAddress,int nStartOffset, const QString sEle
                 sValue=QString("<b>%1</b>").arg(sValue);
             }
 
-
             sOffset=addressToString((void *)(nOffset+nStartOffset));
             ht.addRecord(addressToString(pCurrentAddress),sOffset,sType,sName,makeLink(sValue,sLink),sComment,"");
         }
@@ -1045,7 +1017,6 @@ QString MainWindow::addTable(void *pAddress,int nStartOffset, const QString sEle
 
         nSize=getElementSize(sType);
         nShow=getElementShow(sType);
-
 
         for(int i=0; i<nIndex; i++)
         {
@@ -1128,8 +1099,6 @@ QString MainWindow::addTable(void *pAddress,int nStartOffset, const QString sEle
                 sValue=QString("<b>%1</b>").arg(sValue);
             }
 
-
-
             sOffset=QString("0x%1").arg((unsigned int)(nOffset+nStartOffset),8,16,QChar('0'));
             ht.addRecord(addressToString(pCurrentAddress),sOffset,sElementType,QString("%1[%2]").arg(sName).arg(i),makeLink(sValue,sLink),sComment,"");
         }
@@ -1176,7 +1145,6 @@ bool MainWindow::readProcessMemory(char *pBuffer, int nBufferSize, void *pMemory
     {
         bSuccess=false;
     }
-
 
     if(bSuccess)
     {
@@ -1748,7 +1716,6 @@ QString MainWindow::handlePE(void *pAddress)
             htIDH.addBR();
 
             pSectionsTable+=sizeof(_IMAGE_SECTION_HEADER);
-
         }
     }
 
@@ -1777,7 +1744,6 @@ QByteArray MainWindow::ReadFromMemory(QVariant parameter, unsigned long long nOf
     else
     {
         bResult=umReadProcessMemory((void *)(parameter.toUInt()),baResult.data(),baResult.size(),(void *)nOffset,nSize);
-
     }
 
     if(!bResult)
@@ -1786,7 +1752,6 @@ QByteArray MainWindow::ReadFromMemory(QVariant parameter, unsigned long long nOf
     }
 
     return baResult;
-
 }
 
 MainWindow::um_ReadProcessMemory MainWindow::umReadProcessMemory=0;
@@ -1817,7 +1782,6 @@ bool MainWindow::checkAddress(void *pAddress)
             {
                 return true;
             }
-
         }
     }
 
