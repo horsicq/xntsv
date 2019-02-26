@@ -18,8 +18,7 @@ cd %SOURCE_PATH%
 mkdir %SOURCE_PATH%\release
 rm -f %SOURCE_PATH%\release\%BUILD_NAME%
 mkdir %SOURCE_PATH%\release\%BUILD_NAME%
-mkdir %SOURCE_PATH%\release\%BUILD_NAME%\plugins
-mkdir %SOURCE_PATH%\release\%BUILD_NAME%\plugins\platforms
+mkdir %SOURCE_PATH%\release\%BUILD_NAME%\platforms
 mkdir %SOURCE_PATH%\release\%BUILD_NAME%\sqldrivers
 
 copy %SOURCE_PATH%\build\release\xntsv32.exe %SOURCE_PATH%\release\%BUILD_NAME%\
@@ -31,7 +30,7 @@ copy %QT_PATH32%\bin\Qt5Widgets.dll %SOURCE_PATH%\release\%BUILD_NAME%\
 copy %QT_PATH32%\bin\Qt5Gui.dll %SOURCE_PATH%\release\%BUILD_NAME%\
 copy %QT_PATH32%\bin\Qt5Core.dll %SOURCE_PATH%\release\%BUILD_NAME%\
 copy %QT_PATH32%\bin\Qt5Sql.dll %SOURCE_PATH%\release\%BUILD_NAME%\
-copy %QT_PATH32%\plugins\platforms\qwindows.dll %SOURCE_PATH%\release\%BUILD_NAME%\plugins\platforms\
+copy %QT_PATH32%\plugins\platforms\qwindows.dll %SOURCE_PATH%\release\%BUILD_NAME%\platforms\
 copy %QT_PATH32%\plugins\sqldrivers\qsqlite.dll %SOURCE_PATH%\release\%BUILD_NAME%\sqldrivers\
 
 cd %SOURCE_PATH%\release

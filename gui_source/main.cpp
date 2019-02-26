@@ -26,10 +26,6 @@ int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
-    QString sLibraryPath=QString(argv[0]).replace("\\","/");
-    sLibraryPath=sLibraryPath.section("/",0,-2)+QDir::separator()+"plugins";
-    QCoreApplication::addLibraryPath(sLibraryPath);
-
     QCoreApplication::setOrganizationName(XNTSV_ORGANIZATIONNAME);
     QCoreApplication::setOrganizationDomain(XNTSV_ORGANIZATIONDOMAIN);
     QCoreApplication::setApplicationName(XNTSV_APPLICATIONNAME);
