@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2018 hors<horsicq@gmail.com>
+// Copyright (c) 2017-2019 hors<horsicq@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -195,8 +195,6 @@ NTSTATUS DispatchControl(IN PDEVICE_OBJECT pDeviceObject, IN PIRP pIrp)
 				pIrp->IoStatus.Status=STATUS_INVALID_CID;
 				pIrp->IoStatus.Information=0;
 			}
-
-			
 		}
 		else if(pSL->Parameters.DeviceIoControl.IoControlCode==IOCTL_CLOSEPROCESS)
 		{
@@ -229,7 +227,6 @@ NTSTATUS DispatchControl(IN PDEVICE_OBJECT pDeviceObject, IN PIRP pIrp)
 						pIrp->IoStatus.Status=STATUS_EA_CORRUPT_ERROR;
 						pIrp->IoStatus.Information=0;
 					}
-					
 				}
 				__except(EXCEPTION_EXECUTE_HANDLER)
 				{
@@ -261,7 +258,6 @@ NTSTATUS DispatchControl(IN PDEVICE_OBJECT pDeviceObject, IN PIRP pIrp)
 
 			*(HANDLE*)(pBuffer)=(HANDLE)pEthread;
 			pIrp->IoStatus.Information=sizeof(HANDLE);
-			
 		}
 		else if(pSL->Parameters.DeviceIoControl.IoControlCode==IOCTL_GETEPROCESS)
 		{
@@ -319,18 +315,18 @@ NTSTATUS DispatchControl(IN PDEVICE_OBJECT pDeviceObject, IN PIRP pIrp)
 
 		    while (cpus)
 		    {
-		        if (cpus%2)
+		        if(cpus%2)
 		            cpucount++;
-		        cpus=cpus / 2;
+		        cpus=cpus/2;
 		    }
 		    dpc=ExAllocatePool(NonPagedPool,sizeof(KDPC)*cpucount);
 		    cpus=KeQueryActiveProcessors();
 		    cpunr=0;
 		    dpcnr=0;
 
-		    while (cpus)
+		    while(cpus)
 		    {
-		        if (cpus % 2)
+		        if(cpus%2)
 		        {
 		            
 		            //DbgPrint("Calling dpc routine for cpunr %d\n", cpunr);
@@ -340,12 +336,12 @@ NTSTATUS DispatchControl(IN PDEVICE_OBJECT pDeviceObject, IN PIRP pIrp)
 		            
 		            dpcnr++;
 		        }
-		        cpus=cpus / 2;
+		        cpus=cpus/2;
 		        cpunr++;
 		    }
 		    KeFlushQueuedDpcs();
 		    ExFreePool(dpc);
-		    maxCPU = cpucount;
+		    maxCPU=cpucount;
 
 		    /*for(i = 0;i < maxCPU;i++) //copy each entry into the output buffer
 		    {
@@ -399,7 +395,6 @@ NTSTATUS DriverEntry(IN PDRIVER_OBJECT DriverObject, IN PUNICODE_STRING TheRegis
 	UNICODE_STRING usDeviceName;
 	PDEVICE_OBJECT pDeviceObject;
 	UNICODE_STRING usZwQuerySystemInformation;
-
 
 	//DbgPrint("Driver Entry");
 

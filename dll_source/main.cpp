@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2018 hors<horsicq@gmail.com>
+// Copyright (c) 2017-2019 hors<horsicq@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -360,7 +360,6 @@ extern "C" int __declspec(dllexport) __cdecl um_GetThreadIDs(void *nProcessID,vo
 			hThreadID=(HANDLE)GetCurrentThreadId();
 			*(HANDLE *)pBuffer=hThreadID;
 
-
 			return 1;
 		}
 		else
@@ -417,7 +416,6 @@ extern "C" int __declspec(dllexport) __cdecl um_GetThreadIDs(void *nProcessID,vo
 	GlobalFree(pMemory);
 
 	return 0;
-
 }
 
 extern "C" int __declspec(dllexport) __cdecl um_GetTEBs(void *nProcessID,void **pBuffer, int nBufferSize)
