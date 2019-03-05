@@ -75,8 +75,6 @@ typedef enum _KWAIT_REASON
 } KWAIT_REASON;
 
 typedef struct _THREAD_BASIC_INFORMATION {
-
-
 	NTSTATUS                ExitStatus;
 	PVOID                   TebBaseAddress;
 	CLIENT_ID               ClientId;
@@ -88,7 +86,6 @@ typedef struct _THREAD_BASIC_INFORMATION {
 
 
 typedef struct _SYSTEM_THREAD {
-
 	LARGE_INTEGER           KernelTime;
 	LARGE_INTEGER           UserTime;
 	LARGE_INTEGER           CreateTime;
@@ -100,8 +97,6 @@ typedef struct _SYSTEM_THREAD {
 	ULONG                   ContextSwitchCount;
 	ULONG                   State;
 	KWAIT_REASON            WaitReason;
-
-
 } SYSTEM_THREAD, *PSYSTEM_THREAD;
 
 #define OSVERSION_UNKNOWN 0
@@ -231,7 +226,6 @@ extern "C" int __declspec(dllexport) __cdecl __GetProcesses(char* pBuffer, int n
 					pi->nParentPID=pe32.th32ParentProcessID;
 					lstrcpyW(pi->wszExeName,pe32.szExeFile);
 					
-
 					pi++;
 					nResult+=sizeof(__PROCESSINFO);
 				}
