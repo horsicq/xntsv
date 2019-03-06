@@ -180,7 +180,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 }
 extern "C" BOOL __declspec(dllexport) __cdecl _SetPrivilege(char* SeNamePriv, BOOL EnableTF)
 {
-	HANDLE hToken;
+	
 	LUID SeValue;
 	TOKEN_PRIVILEGES tp;
 
