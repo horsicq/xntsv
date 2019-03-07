@@ -160,7 +160,7 @@ MainWindow::MainWindow(QWidget *parent) :
     }
     else
     {
-        QMessageBox::critical(0, "Error!", "Cannot load "+lib->fileName());
+        QMessageBox::critical(nullptr, "Error!", "Cannot load "+lib->fileName());
         exit(0);
     }
 
@@ -286,8 +286,8 @@ void MainWindow::getInfo(void *nPID)
         hPID=umOpenProcess(nPID);
     }
 
-    ui->pushButtonMemoryMap->setEnabled(hPID!=0);
-    ui->pushButtonReload->setEnabled(hPID!=0);
+    ui->pushButtonMemoryMap->setEnabled(hPID!=nullptr);
+    ui->pushButtonReload->setEnabled(hPID!=nullptr);
 
     if(hPID)
     {
@@ -465,7 +465,6 @@ void MainWindow::anchor(const QUrl &link)
 
     ui->pushButtonBack->setEnabled(history.isBackAvailable());
     ui->pushButtonForward->setEnabled(history.isForwardAvailable());
-
     //    qDebug(sResult.toAscii().data());
 }
 
@@ -516,7 +515,6 @@ void MainWindow::on_pushButtonBack_clicked()
     ui->comboBoxType->setItemText(0,sElementType);
     ui->comboBoxType->setCurrentIndex(0);
 
-    ;
     ui->textBrowserResult->setHtml(sRecord.section("&",1,1));
 
     ui->pushButtonBack->setEnabled(history.isBackAvailable());
@@ -697,7 +695,7 @@ QString MainWindow::addTable(void *pAddress,int nStartOffset, const QString sEle
     HtmlTable ht;
     QString sResult;
     int nElementSize;
-    void *pCurrentAddress=0;
+    void *pCurrentAddress=nullptr;
 
     QSqlDatabase DataBase;
 
@@ -1754,8 +1752,8 @@ QByteArray MainWindow::ReadFromMemory(QVariant parameter, unsigned long long nOf
     return baResult;
 }
 
-MainWindow::um_ReadProcessMemory MainWindow::umReadProcessMemory=0;
-MainWindow::km_ReadProcessMemory MainWindow::kmReadProcessMemory=0;
+MainWindow::um_ReadProcessMemory MainWindow::umReadProcessMemory=nullptr;
+MainWindow::km_ReadProcessMemory MainWindow::kmReadProcessMemory=nullptr;
 bool MainWindow::bKernel=false;
 
 void MainWindow::on_pushButtonMemoryMap_clicked()
