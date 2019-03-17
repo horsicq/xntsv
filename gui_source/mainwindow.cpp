@@ -250,8 +250,8 @@ void MainWindow::getInfo(void *nPID)
     HtmlTable ht;
     QByteArray baData;
     int nNumberOfThreads=0;
-    void *pAddress=0;
-    void *hThread=0;
+    void *pAddress=nullptr;
+    void *hThread=nullptr;
     QString sLink;
 
     ui->textBrowserResult->setHtml("");
@@ -271,7 +271,7 @@ void MainWindow::getInfo(void *nPID)
             umCloseProcess(hPID);
         }
 
-        hPID=0;
+        hPID=nullptr;
         //bIsProcess64=false;
     }
 
@@ -293,7 +293,7 @@ void MainWindow::getInfo(void *nPID)
     {
         ht.addTableBegin();
 
-        pAddress=0;
+        pAddress=nullptr;
 
         if(bKernel)
         {
@@ -308,7 +308,7 @@ void MainWindow::getInfo(void *nPID)
 
         ht.addRecord("",QString("Process(ID=%1)").arg(hexToString(nPID)),makeLink(addressToString(pAddress),sLink),"","","","");
 
-        pAddress=0;
+        pAddress=nullptr;
 
         if(bKernel)
         {
@@ -340,7 +340,7 @@ void MainWindow::getInfo(void *nPID)
 #else
             hThread=(void *)(*(long long *)(baData.data()+sizeof(void *)*i));
 #endif
-            pAddress=0;
+            pAddress=nullptr;
 
             if(bKernel)
             {

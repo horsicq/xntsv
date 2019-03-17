@@ -26,7 +26,6 @@ HtmlTable::HtmlTable()
 
 void HtmlTable::addTableBegin()
 {
-    //    sTable.append("<table border=\"1\">");
     sTable.append("<table border=\"1\" style=\"border-style:solid;\" cellspacing=\"-1\" cellpadding=\"5\">");
     //    table border="1" style="border-style:solid" cellspacing="-1" cellpadding="0"
 }
