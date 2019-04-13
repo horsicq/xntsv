@@ -34,7 +34,7 @@ class Prototype : public QDialog
     Q_OBJECT
 
 public:
-    explicit Prototype(QWidget *parent = 0);
+    explicit Prototype(QWidget *parent=nullptr);
     ~Prototype();
 
     void setPrototype(QString sText);

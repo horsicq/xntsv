@@ -60,7 +60,6 @@ MainWindow::MainWindow(QWidget *parent) :
 #else
         addLog("Load gpm64.dll");
 #endif
-
         ui->radioButtonUserMode->setChecked(true);
 
         GetBuildNumber=(_GetBuildNumber)lib->resolve("_GetBuildNumber");
@@ -146,7 +145,6 @@ MainWindow::MainWindow(QWidget *parent) :
 #else
         QString sDriverName=QCoreApplication::applicationDirPath().replace("/","\\")+"\\memoryaccess64.sys";
 #endif
-
         if(kmLoadDriver(sDriverName.toLatin1().data()))
         {
             addLog("Load Kernel Driver: "+sDriverName);
@@ -1019,13 +1017,11 @@ QString MainWindow::addTable(void *pAddress,int nStartOffset, const QString sEle
         for(int i=0; i<nIndex; i++)
         {
             nOffset=nElementSize*i;
-
 #ifndef __X64
             pCurrentAddress=(void *)((int)pAddress+nOffset);
 #else
             pCurrentAddress=(void *)((long long)pAddress+nOffset);
 #endif
-
             if(nShow==0)
             {
                 sLink=QString("%1#%2#%3.html").arg(sType).arg(sName).arg(addressToString(pCurrentAddress));
@@ -1770,6 +1766,8 @@ bool MainWindow::getMemoryInformation(void *pAddress, MainWindow::_MEMORY_BASIC_
 
 bool MainWindow::checkAddress(void *pAddress)
 {
+    bool bResult=false;
+
     if(pAddress)
     {
         _MEMORY_BASIC_INFORMATION mbi;
@@ -1778,12 +1776,12 @@ bool MainWindow::checkAddress(void *pAddress)
         {
             if(mbi.Type!=0)
             {
-                return true;
+                bResult=true;
             }
         }
     }
 
-    return false;
+    return bResult;
 }
 
 void MainWindow::on_radioButtonKernelMode_toggled(bool checked)

@@ -286,7 +286,7 @@ class MainWindow : public QMainWindow
 #endif
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent=nullptr);
     ~MainWindow();
 
 private slots:

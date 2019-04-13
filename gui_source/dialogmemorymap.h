@@ -59,7 +59,7 @@ class DialogMemoryMap : public QDialog
     };
 #endif
 public:
-    explicit DialogMemoryMap(QWidget *parent = 0);
+    explicit DialogMemoryMap(QWidget *parent=nullptr);
     ~DialogMemoryMap();
     void setData(int (* umMemoryQuery)(void *,void *,char *,int),QByteArray(* ReadFromMemory)(QVariant, unsigned long long, unsigned long long, bool *),void *hPID);
 private slots:
