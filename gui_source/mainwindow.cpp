@@ -30,7 +30,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     setWindowTitle(QString("XNTSV v%1").arg(XNTSV_APPLICATIONVERSION));
-
     //    ui->textBrowserResult->setStyleSheet("background-color:rgb(150,147,88);");
 
     hPID=nullptr;
@@ -384,7 +383,6 @@ void MainWindow::anchor(const QUrl &link)
     void *pAddress;
     int nElementSize=0;
     QByteArray baData;
-
     //StructursBase
 
     sTitle=link.toString();
@@ -624,7 +622,7 @@ int MainWindow::getElementSize(const QString &sElementType)
 
 int MainWindow::getElementShow(const QString &sElementType)
 {
-    int nElementShow;
+    int nElementShow=0;
 
     if(sElementType.contains("*"))
     {
