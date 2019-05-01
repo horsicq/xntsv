@@ -10,4 +10,3 @@ mkdir %SOURCE_PATH%\build
 mkdir %SOURCE_PATH%\build\db
 mkdir %SOURCE_PATH%\release
 set /p XNTSV_VERSION=<release_version.txt
-
