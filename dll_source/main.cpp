@@ -178,6 +178,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 	}
 	return TRUE;
 }
+
 extern "C" BOOL __declspec(dllexport) __cdecl _SetPrivilege(char* SeNamePriv, BOOL EnableTF)
 {
 	HANDLE hToken;
@@ -204,6 +205,7 @@ extern "C" BOOL __declspec(dllexport) __cdecl _SetPrivilege(char* SeNamePriv, BO
 	CloseHandle(hToken);
 	return TRUE;
 }
+
 extern "C" int __declspec(dllexport) __cdecl __GetProcesses(char* pBuffer, int nBufferSize)
 {
 	int nResult=0;
@@ -244,6 +246,7 @@ extern "C" int __declspec(dllexport) __cdecl __GetProcesses(char* pBuffer, int n
 
 	return nResult;
 }
+
 extern "C" PVOID __declspec(dllexport) __cdecl um_GetPEB(void *nProcessHandle)
 {
 	int nTemp;
