@@ -51,5 +51,4 @@ private:
     Ui::Prototype *ui;
     QString sProto;
 };
-
 #endif // PROTOTYPE_H

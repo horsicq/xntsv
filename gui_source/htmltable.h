@@ -28,6 +28,7 @@ class HtmlTable
 {
 private:
     QString sTable;
+    
 public:
     HtmlTable();
     void addTableBegin();
@@ -39,5 +40,4 @@ public:
     void addString(const QString &sString);
     void addTab(const QString &sString);
 };
-
 #endif // HTMLTABLE_H

@@ -62,11 +62,13 @@ public:
     explicit DialogMemoryMap(QWidget *parent=nullptr);
     ~DialogMemoryMap();
     void setData(int (* umMemoryQuery)(void *,void *,char *,int),QByteArray(* ReadFromMemory)(QVariant, unsigned long long, unsigned long long, bool *),void *hPID);
+    
 private slots:
     void reload();
     void on_pushButtonClose_clicked();
     QString getProtect(unsigned int nValue);
     void on_pushButtonReload_clicked();
+    
 private:
     Ui::DialogMemoryMap *ui;
     int (* umMemoryQuery)(void *,void *,char *,int);

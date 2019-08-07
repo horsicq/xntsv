@@ -50,7 +50,7 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-
+    
     struct __PROCESSINFO
     {
         int nPID;
@@ -333,6 +333,7 @@ private slots:
     bool checkAddress(void *pAddress);
     void on_radioButtonKernelMode_toggled(bool checked);
     void on_radioButtonUserMode_toggled(bool checked);
+    
 private:
     Ui::MainWindow *ui;
     QLibrary *lib;
@@ -365,7 +366,6 @@ private:
     km_GetETHREAD kmGetETHREAD;
     um_GetThreadIDs umGetThreadIDs;
     um_GetTEB umGetTEB;
-
 #ifdef __X64
     //um_IsProcess64 umIsProcess64;
 #endif
