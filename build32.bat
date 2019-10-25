@@ -32,6 +32,8 @@ copy %QT_PATH32%\bin\Qt5Core.dll %SOURCE_PATH%\release\%BUILD_NAME%\
 copy %QT_PATH32%\bin\Qt5Sql.dll %SOURCE_PATH%\release\%BUILD_NAME%\
 copy %QT_PATH32%\plugins\platforms\qwindows.dll %SOURCE_PATH%\release\%BUILD_NAME%\platforms\
 copy %QT_PATH32%\plugins\sqldrivers\qsqlite.dll %SOURCE_PATH%\release\%BUILD_NAME%\sqldrivers\
+copy %VS_PATH%\VC\Redist\MSVC\14.16.27012\x86\Microsoft.VC141.CRT\msvcp140.dll %SOURCE_PATH%\release\%BUILD_NAME%\
+copy %VS_PATH%\VC\Redist\MSVC\14.16.27012\x86\Microsoft.VC141.CRT\vcruntime140.dll %SOURCE_PATH%\release\%BUILD_NAME%\
 
 cd %SOURCE_PATH%\release
 if exist %BUILD_NAME%_%XNTSV_VERSION%.zip del %BUILD_NAME%_%XNTSV_VERSION%.zip
