@@ -91,3 +91,6 @@
 [submodule "XDynStructsWidget"]
 	path = XDynStructsWidget
 	url = https://github.com/horsicq/XDynStructsWidget
+[submodule "XProcessWidget"]
+	path = XProcessWidget
+	url = https://github.com/horsicq/XProcessWidget
