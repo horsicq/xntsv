@@ -4,18 +4,19 @@ TARGET = xntsv
 
 TEMPLATE = app
 
-SOURCES += \ 
+SOURCES += \
+    guimainwindow.cpp \
+    main_gui.cpp \
     prototype.cpp \
-    mainwindow.cpp \
-    main.cpp \
     htmltable.cpp \
     history.cpp \
     about.cpp \
     dialogmemorymap.cpp
 
-HEADERS  += \ 
+HEADERS  += \
+    ../global.h \
+    guimainwindow.h \
     prototype.h \
-    mainwindow.h \
     htmltable.h \
     history.h \
     about.h \
@@ -23,8 +24,8 @@ HEADERS  += \
     dialogmemorymap.h
 
 FORMS    += \
+    guimainwindow.ui \
     prototype.ui \
-    mainwindow.ui \
     about.ui \
     dialogmemorymap.ui
 
