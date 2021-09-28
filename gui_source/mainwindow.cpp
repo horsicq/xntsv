@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019 hors<horsicq@gmail.com>
+// Copyright (c) 2017-2021 hors<horsicq@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -25,9 +25,16 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    QString sDataBaseName;
-
     ui->setupUi(this);
+
+    if(!XProcess::setDebugPrivilege(true))
+    {
+        QMessageBox::critical(this,tr("Error"),tr("Please run the program as an administrator"));
+
+        exit(1);
+    }
+
+    QString sDataBaseName;
 
     setWindowTitle(QString("XNTSV v%1").arg(XNTSV_APPLICATIONVERSION));
     //    ui->textBrowserResult->setStyleSheet("background-color:rgb(150,147,88);");
@@ -87,16 +94,6 @@ MainWindow::MainWindow(QWidget *parent) :
 #ifdef __X64
         //umIsProcess64=(um_IsProcess64)lib->resolve("um_IsProcess64");;
 #endif
-        if(SetPrivilege((char *)("SeDebugPrivilege"),true))
-        {
-            addLog("Set Debug Privilege");
-
-            getProcesses();
-        }
-        else
-        {
-            QMessageBox::critical(0, "Need Admin Privs", "!");
-        }
 
 #ifdef __X64
         sDataBaseName=QString("%1_%2_64.db3").arg(GetBuildNumber()).arg(GetSPNumber());

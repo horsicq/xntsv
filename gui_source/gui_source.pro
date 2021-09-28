@@ -1,10 +1,6 @@
 QT       += core widgets sql
 
-!contains(QMAKE_TARGET.arch, x86_64) {
-    TARGET = xntsv32
-} else {
-    TARGET = xntsv64
-}
+TARGET = xntsv
 
 TEMPLATE = app
 
@@ -39,3 +35,8 @@ RESOURCES += \
     resource.qrc
 
 include(../build.pri)
+
+!contains(XCONFIG, xprocesswidget) {
+    XCONFIG += xprocesswidget
+    include(../../_mylibs/XProcessWidget/xprocesswidget.pri)
+}

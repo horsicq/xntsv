@@ -42,6 +42,8 @@
 #include "_version.h"
 #include "dialogmemorymap.h"
 
+#include "xprocess.h"
+
 namespace Ui
 {
 class MainWindow;
