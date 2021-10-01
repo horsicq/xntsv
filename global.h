@@ -29,5 +29,6 @@
 #define X_ORGANIZATIONNAME "NTInfo"
 #define X_ORGANIZATIONDOMAIN "ntinfo.biz"
 #define X_OPTIONSFILE "xntsv.ini"
+#define X_SHORTCUTSFILE "shortcuts.ini"
 
 #endif // _GLOBAL_H
