@@ -21,7 +21,6 @@ FORMS    += \
     dialogoptions.ui \
     guimainwindow.ui
 
-
 win32 {
     RC_ICONS = ../icons/main.ico
 }
