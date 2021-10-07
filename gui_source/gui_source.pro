@@ -33,5 +33,5 @@ include(../build.pri)
 
 !contains(XCONFIG, xprocesswidget) {
     XCONFIG += xprocesswidget
-    include(../../_mylibs/XProcessWidget/xprocesswidget.pri)
+    include(../XProcessWidget/xprocesswidget.pri)
 }
