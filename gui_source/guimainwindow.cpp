@@ -770,5 +770,6 @@ void GuiMainWindow::on_actionOptions_triggered()
 
 void GuiMainWindow::on_actionAbout_triggered()
 {
-    // TODO
+    DialogAbout dialogAbout(this);
+    dialogAbout.exec();
 }
