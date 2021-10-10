@@ -53,7 +53,7 @@ void DialogOptions::on_pushButtonOK_clicked()
 
     if(g_pOptions->isRestartNeeded())
     {
-        QMessageBox::information(this,tr("Information"),tr("Please restart the application"));
+        QMessageBox::information(XOptions::getMainWidget(this),tr("Information"),tr("Please restart the application"));
     }
 
     this->close();
