@@ -1,7 +1,8 @@
 3.00
 -----------------------------------------------------------------------
-[+] CMAKE build system
 [+] New structs
 [+] New translations
-[+] Many bugs have been fixed.
+[+] Many bugs have been fixed
+[-] Kernel mode is no longer supported 
+[-] Windows 2000,XP,Vista are no longer supported
 #######################################################################
