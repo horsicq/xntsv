@@ -60,6 +60,8 @@ GuiMainWindow::GuiMainWindow(QWidget *pParent) :
 
     g_xShortcuts.load();
 
+    ui->widgetProcesses->setActive(true);
+
     adjust();
 }
 
