@@ -11,3 +11,9 @@ XNTSV program for detailed viewing of system structures
 * Changelog: https://github.com/horsicq/xntsv/blob/master/changelog.txt
 
 ![alt text](https://github.com/horsicq/xntsv/blob/master/mascots/xntsv.png "Mascot")
+
+![alt text](https://github.com/horsicq/xntsv/blob/master/docs/1.png "1")
+![alt text](https://github.com/horsicq/xntsv/blob/master/docs/2.png "2")
+![alt text](https://github.com/horsicq/xntsv/blob/master/docs/3.png "3")
+![alt text](https://github.com/horsicq/xntsv/blob/master/docs/4.png "4")
+![alt text](https://github.com/horsicq/xntsv/blob/master/docs/5.png "5")
