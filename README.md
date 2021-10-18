@@ -3,7 +3,39 @@
 [![GitHub All Releases](https://img.shields.io/github/downloads/horsicq/xntsv/total.svg)](https://github.com/horsicq/xntsv/releases)
 [![gitlocalized ](https://gitlocalize.com/repo/4736/whole_project/badge.svg)](https://github.com/horsicq/XTranslation)
 
-XNTSV program for detailed viewing of system structures
+XNTSV program for detailed viewing of system structures in Windows.
+
+During process creation in Windows, special system structures appear in the system such as:
+
+* [PEB](https://en.wikipedia.org/wiki/Process_Environment_Block)
+* TEB * 
+* PEB_LDR_DATA 
+* LDR_DATA_TABLE_ENTRY 
+* RTL_USER_PROCESS_PARAMETERS etc .
+
+The list of different structures is large and specific for each version of the operating system.
+
+**You could easily add your oun structs (Edit structs/ARCH/custom.json)**
+
+Officially they are not fully documented and change in different Windows versions.
+
+This program shows complete information about these structures. 
+It can be useful for researchers of Windows internals, as well as creators of software protection.
+
+The program supports now:
+
+* Windows 7
+* Windows 7 SP1
+* Windows 8
+* Windows 8.1
+* Windows Server 2016
+* Windows Server 2019
+* Windows 10 (all builds)
+* Windows 11 (build 22000)
+
+**The program does not support now Windows 2000,XP and Vista.** If you need structs for these OS use old versions of XNTSV.
+
+**The program does not support now kernel mode.** Because for new operating systems, you need to sign the driver to access the kernel. Certificates are very expensive. If you need kernel structs use old versions of XNTSV.
 
 * Download: https://github.com/horsicq/xntsv/releases
 * How to run: https://github.com/horsicq/xntsv/blob/master/docs/RUN.md

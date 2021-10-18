@@ -3,6 +3,7 @@
 [+] New structs
 [+] New translations
 [+] Windows 11 support
+[+] Custom structs
 [+] Many bugs have been fixed
 [-] Kernel mode is no longer supported 
 [-] Windows 2000,XP,Vista are no longer supported
