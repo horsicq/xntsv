@@ -93,7 +93,6 @@ FORMS += \
     dialogabout.ui \
     dialogoptions.ui \
     guimainwindow.ui \
-    mainwindow.ui \
     ../nfd_widget/nfd_widget.ui
 
 SOURCES += \
@@ -337,5 +336,4 @@ SOURCES += \
     dialogoptions.cpp \
     guimainwindow.cpp \
     main_gui.cpp \
-    mainwindow.cpp \
     ../nfd_widget/nfd_widget.cpp
