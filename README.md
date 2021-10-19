@@ -17,7 +17,7 @@ The list of different structures is large and specific for each version of the o
 
 **You could easily add your oun structs (Edit structs/ARCH/custom.json)**
 
-Officially they are not fully documented and change in different Windows versions.
+Officially it is not fully documented and change in different Windows versions.
 
 This program shows complete information about these structures. 
 It can be useful for researchers of Windows internals, as well as creators of software protection.
