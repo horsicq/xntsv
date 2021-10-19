@@ -170,7 +170,7 @@
     <name>DialogCreateViewModel</name>
     <message>
         <source>Create view model</source>
-        <translation>Создать вид/модель</translation>
+        <translation>Создать модель вида</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -276,7 +276,7 @@
     </message>
     <message>
         <source>Invalid</source>
-        <translation>Ошибка</translation>
+        <translation>Неверный</translation>
     </message>
 </context>
 <context>
@@ -466,7 +466,7 @@
     </message>
     <message>
         <source>Create view model</source>
-        <translation>Создать вид/модель</translation>
+        <translation>Создать модель вида</translation>
     </message>
     <message>
         <source>Error</source>
@@ -630,7 +630,7 @@
     <name>DialogShortcuts</name>
     <message>
         <source>Shortcuts</source>
-        <translation>Ссылки</translation>
+        <translation>Сочетания клавиш</translation>
     </message>
     <message>
         <source>Filter</source>
@@ -654,7 +654,7 @@
     </message>
     <message>
         <source>Shortcut</source>
-        <translation>Ссылка</translation>
+        <translation>Сочетание клавиш</translation>
     </message>
     <message>
         <source>Cannot set shortcut</source>
@@ -665,7 +665,7 @@
     <name>DialogShowImage</name>
     <message>
         <source>Image</source>
-        <translation>Образ</translation>
+        <translation>Рисунок</translation>
     </message>
     <message>
         <source>Close</source>
@@ -836,7 +836,7 @@
     </message>
     <message>
         <source>Header</source>
-        <translation>Header</translation>
+        <translation>Заголовок</translation>
     </message>
 </context>
 <context>
@@ -1026,7 +1026,7 @@
     </message>
     <message>
         <source>Shortcuts</source>
-        <translation>Ссылки</translation>
+        <translation>Сочетания клавиш</translation>
     </message>
     <message>
         <source>Options</source>
@@ -1273,7 +1273,7 @@
     </message>
     <message>
         <source>Table of contents</source>
-        <translation>Оглавление</translation>
+        <translation>Таблица с содержимым</translation>
     </message>
     <message>
         <source>Modules</source>
@@ -1289,7 +1289,7 @@
     </message>
     <message>
         <source>Local relocation</source>
-        <translation>Местный переезд</translation>
+        <translation>Локальное перемещение</translation>
     </message>
     <message>
         <source>Functions</source>
@@ -1305,7 +1305,7 @@
     </message>
     <message>
         <source>Header</source>
-        <translation>Header</translation>
+        <translation>Заголовок</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -1561,7 +1561,7 @@
     </message>
     <message>
         <source>Show valid</source>
-        <translation>Показать действительный</translation>
+        <translation>Показать правильно</translation>
     </message>
     <message>
         <source>Format</source>
@@ -1625,7 +1625,7 @@
     </message>
     <message>
         <source>Load config</source>
-        <translation>Загрузить конфигурацию</translation>
+        <translation>Загрузочная конфигурация</translation>
     </message>
     <message>
         <source>Bound import</source>
@@ -1657,7 +1657,7 @@
     </message>
     <message>
         <source>Header</source>
-        <translation>Header</translation>
+        <translation>Заголовок</translation>
     </message>
     <message>
         <source>Demangle</source>
@@ -1688,7 +1688,7 @@
     </message>
     <message>
         <source>Interpreter</source>
-        <translation>Устный переводчик</translation>
+        <translation>Интерпретатор</translation>
     </message>
     <message>
         <source>Name</source>
@@ -1735,7 +1735,7 @@
     </message>
     <message>
         <source>Images</source>
-        <translation>Образы</translation>
+        <translation>Рисунки</translation>
     </message>
     <message>
         <source>Export File Name</source>
@@ -1864,7 +1864,7 @@
     </message>
     <message>
         <source>Header</source>
-        <translation>Header</translation>
+        <translation>Заголовок</translation>
     </message>
     <message>
         <source>Overlay</source>
@@ -1896,7 +1896,7 @@
     </message>
     <message>
         <source>Cryptor</source>
-        <translation>Шифратор</translation>
+        <translation>Криптор</translation>
     </message>
     <message>
         <source>Database</source>
@@ -1924,7 +1924,7 @@
     </message>
     <message>
         <source>Image</source>
-        <translation>Образ</translation>
+        <translation>Рисунок</translation>
     </message>
     <message>
         <source>Installer</source>
@@ -2000,11 +2000,11 @@
     </message>
     <message>
         <source>Import hash</source>
-        <translation>Импортировать хеш</translation>
+        <translation>Хэш импорта</translation>
     </message>
     <message>
         <source>Code section</source>
-        <translation>Секция</translation>
+        <translation>Секция кода</translation>
     </message>
     <message>
         <source>Entry point section</source>
@@ -2031,7 +2031,7 @@
     <name>StaticScan</name>
     <message>
         <source>File scan</source>
-        <translation>Сканирования файла</translation>
+        <translation>Сканирование файла</translation>
     </message>
     <message>
         <source>Device scan</source>
@@ -2096,7 +2096,7 @@
     </message>
     <message>
         <source>Image</source>
-        <translation>Образ</translation>
+        <translation>Рисунок</translation>
     </message>
     <message>
         <source>Text</source>
@@ -2157,7 +2157,7 @@
     </message>
     <message>
         <source>Header</source>
-        <translation>Header</translation>
+        <translation>Заголовок</translation>
     </message>
     <message>
         <source>Overlay</source>
@@ -2437,7 +2437,7 @@
     </message>
     <message>
         <source>Images</source>
-        <translation>Образы</translation>
+        <translation>Рисунки</translation>
     </message>
     <message>
         <source>Documents</source>
@@ -2617,7 +2617,7 @@
     <name>XMSDOS</name>
     <message>
         <source>Header</source>
-        <translation>Header</translation>
+        <translation>Заголовок</translation>
     </message>
     <message>
         <source>Overlay</source>
@@ -2640,7 +2640,7 @@
     </message>
     <message>
         <source>File offset</source>
-        <translation>Смещение</translation>
+        <translation>Смещение в файле</translation>
     </message>
     <message>
         <source>Virtual address</source>
@@ -2729,7 +2729,7 @@
     </message>
     <message>
         <source>Application</source>
-        <translation>заявка</translation>
+        <translation>Приложение</translation>
     </message>
     <message>
         <source>Console</source>
@@ -2753,7 +2753,7 @@
     </message>
     <message>
         <source>Header</source>
-        <translation>Header</translation>
+        <translation>Заголовок</translation>
     </message>
     <message>
         <source>Section</source>
@@ -2834,7 +2834,7 @@
     </message>
     <message>
         <source>Viewer</source>
-        <translation>Зритель</translation>
+        <translation>Просмотрщик</translation>
     </message>
     <message>
         <source>Save</source>
@@ -2854,7 +2854,7 @@
     </message>
     <message>
         <source>Memory</source>
-        <translation>объем памяти</translation>
+        <translation>Память</translation>
     </message>
     <message>
         <source>File</source>
@@ -3068,7 +3068,7 @@
     </message>
     <message>
         <source>Handles</source>
-        <translation>Ручки</translation>
+        <translation>Хэндлы</translation>
     </message>
     <message>
         <source>Run</source>
@@ -3124,7 +3124,7 @@
     </message>
     <message>
         <source>Viewer</source>
-        <translation>Зритель</translation>
+        <translation>Просмотрщик</translation>
     </message>
     <message>
         <source>Action</source>
@@ -3152,7 +3152,7 @@
     </message>
     <message>
         <source>Stack</source>
-        <translation>Куча</translation>
+        <translation>Стэк</translation>
     </message>
     <message>
         <source>Archive</source>
@@ -3168,7 +3168,7 @@
     </message>
     <message>
         <source>Memory</source>
-        <translation>объем памяти</translation>
+        <translation>Память</translation>
     </message>
 </context>
 </TS>
