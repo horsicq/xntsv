@@ -4,6 +4,10 @@ TARGET = xntsv
 
 TEMPLATE = app
 
+macx {
+    TARGET = XNTSV
+}
+
 SOURCES += \
     dialogabout.cpp \
     dialogoptions.cpp \
@@ -36,3 +40,9 @@ include(../build.pri)
     XCONFIG += xprocesswidget
     include(../XProcessWidget/xprocesswidget.pri)
 }
+
+DISTFILES += \
+    ../LICENSE \
+    ../README.md \
+    ../changelog.txt \
+    ../release_version.txt
