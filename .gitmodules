@@ -97,3 +97,6 @@
 [submodule "XFileInfo"]
 	path = XFileInfo
 	url = https://github.com/horsicq/XFileInfo
+[submodule "XProcessModulesWidget"]
+	path = XProcessModulesWidget
+	url = https://github.com/horsicq/XProcessModulesWidget
