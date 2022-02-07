@@ -38,16 +38,16 @@ GuiMainWindow::GuiMainWindow(QWidget *pParent) :
 
     g_xOptions.setName(X_OPTIONSFILE);
 
-    QList<XOptions::ID> listIDs;
+    g_xOptions.addID(XOptions::ID_VIEW_STYLE,"Fusion");
+    g_xOptions.addID(XOptions::ID_VIEW_QSS,"");
+    g_xOptions.addID(XOptions::ID_VIEW_LANG,"System");
+    g_xOptions.addID(XOptions::ID_VIEW_STAYONTOP,false);
 
-    listIDs.append(XOptions::ID_STYLE);
-    listIDs.append(XOptions::ID_QSS);
-    listIDs.append(XOptions::ID_LANG);
-    listIDs.append(XOptions::ID_STAYONTOP);
-    listIDs.append(XOptions::ID_SEARCHSIGNATURESPATH);
-    listIDs.append(XOptions::ID_STRUCTSPATH);
+    StaticScanOptionsWidget::setDefaultValues(&g_xOptions);
+    SearchSignaturesOptionsWidget::setDefaultValues(&g_xOptions);
+    XHexViewOptionsWidget::setDefaultValues(&g_xOptions);
+    XDisasmViewOptionsWidget::setDefaultValues(&g_xOptions);
 
-    g_xOptions.setValueIDs(listIDs);
     g_xOptions.load();
 
     g_xShortcuts.setName(X_SHORTCUTSFILE);
@@ -64,7 +64,7 @@ GuiMainWindow::GuiMainWindow(QWidget *pParent) :
 
     ui->widgetProcesses->setActive(true);
 
-    adjust();
+    adjustWindow();
 }
 
 GuiMainWindow::~GuiMainWindow()
@@ -75,16 +75,11 @@ GuiMainWindow::~GuiMainWindow()
     delete ui;
 }
 
-void GuiMainWindow::adjust()
+void GuiMainWindow::adjustWindow()
 {
+    ui->widgetProcesses->adjustView();
+
     g_xOptions.adjustStayOnTop(this);
-//    ui->widgetProcesses->setShortcuts(&g_xShortcuts);
-
-//    XProcessWidget::OPTIONS options={};
-//    options.sStructsPath=g_xOptions.getStructsPath();
-//    options.sSearchSignaturesPath=g_xOptions.getSearchSignaturesPath();
-
-//    ui->widgetProcesses->setOptions(options);
 }
 
 void GuiMainWindow::on_actionExit_triggered()
@@ -100,7 +95,7 @@ void GuiMainWindow::on_actionShortcuts_triggered()
 
     dialogShortcuts.exec();
 
-    adjust();
+    adjustWindow();
 }
 
 void GuiMainWindow::on_actionOptions_triggered()
@@ -108,7 +103,7 @@ void GuiMainWindow::on_actionOptions_triggered()
     DialogOptions dialogOptions(this,&g_xOptions);
     dialogOptions.exec();
 
-    adjust();
+    adjustWindow();
 }
 
 void GuiMainWindow::on_actionAbout_triggered()

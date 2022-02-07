@@ -53,7 +53,7 @@ public:
     ~GuiMainWindow();
 
 private slots:
-    void adjust();
+    void adjustWindow();
 
     void on_actionExit_triggered();
     void on_actionShortcuts_triggered();
