@@ -100,3 +100,6 @@
 [submodule "XProcessModulesWidget"]
 	path = XProcessModulesWidget
 	url = https://github.com/horsicq/XProcessModulesWidget
+[submodule "XPDF"]
+	path = XPDF
+	url = https://github.com/horsicq/XPDF
