@@ -1,6 +1,9 @@
 3.01
 -----------------------------------------------------------------------
 [+] Support kernel mode(WinDbg driver)
+[+] New memory map widget
+[+] New modules widget
+[+] New translations
 [+] Many bugs have been fixed
 #######################################################################
 3.00

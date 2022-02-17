@@ -8,10 +8,10 @@ XNTSV program for detailed viewing of system structures in Windows.
 During process creation in Windows, special system structures appear in the system such as:
 
 * [PEB](https://en.wikipedia.org/wiki/Process_Environment_Block)
-* TEB * 
-* PEB_LDR_DATA 
-* LDR_DATA_TABLE_ENTRY 
-* RTL_USER_PROCESS_PARAMETERS etc .
+* TEB *
+* PEB_LDR_DATA
+* LDR_DATA_TABLE_ENTRY
+* RTL_USER_PROCESS_PARAMETERS etc.
 
 The list of different structures is large and specific for each version of the operating system.
 
