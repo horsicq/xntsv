@@ -3,6 +3,7 @@
 [+] Support kernel mode(WinDbg driver)
 [+] New memory map widget
 [+] New modules widget
+[+] New features in PE Viewer
 [+] New translations
 [+] Many bugs have been fixed
 #######################################################################
