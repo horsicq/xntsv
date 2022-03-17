@@ -112,3 +112,6 @@
 [submodule "XLLVMDemangler"]
 	path = XLLVMDemangler
 	url = https://github.com/horsicq/XLLVMDemangler
+[submodule "XHexEdit"]
+	path = XHexEdit
+	url = https://github.com/horsicq/XHexEdit
