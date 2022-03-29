@@ -115,3 +115,6 @@
 [submodule "XHexEdit"]
 	path = XHexEdit
 	url = https://github.com/horsicq/XHexEdit
+[submodule "XWinIODriver"]
+	path = XWinIODriver
+	url = https://github.com/horsicq/XWinIODriver
