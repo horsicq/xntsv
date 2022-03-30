@@ -48,6 +48,11 @@ GuiMainWindow::GuiMainWindow(QWidget *pParent) :
     XHexViewOptionsWidget::setDefaultValues(&g_xOptions);
     XDisasmViewOptionsWidget::setDefaultValues(&g_xOptions);
 
+#ifdef Q_OS_WIN
+    g_xOptions.addID(XOptions::ID_IODRIVER_FILENAME,"$app/xwiniodriver.sys");
+    g_xOptions.addID(XOptions::ID_IODRIVER_SERVICENAME,"XWINIODRIVER");
+#endif
+
     g_xOptions.load();
 
     g_xShortcuts.setName(X_SHORTCUTSFILE);

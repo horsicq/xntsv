@@ -1,6 +1,6 @@
 3.01
 -----------------------------------------------------------------------
-[+] Support kernel mode(WinDbg driver)
+[+] Support kernel mode(Need signed driver)
 [+] New memory map widget
 [+] New modules widget
 [+] New features in PE Viewer
