@@ -29,6 +29,7 @@ win32 {
     RC_ICONS = ../icons/main.ico
     CONFIG -= embed_manifest_exe
     QMAKE_MANIFEST = windows.manifest.xml
+    XCONFIG += use_xwiniodriver
 }
 
 RESOURCES += \
