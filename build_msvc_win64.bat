@@ -7,5 +7,6 @@ set X_SOURCE_PATH=%~dp0
 set X_BUILD_NAME=xntsv
 set X_BUILD_PREFIX=win64
 set /p X_RELEASE_VERSION=<%X_SOURCE_PATH%\release_version.txt
+set X_ARCH=x64
 
 call %X_SOURCE_PATH%\build_win_generic.cmd

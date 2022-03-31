@@ -11,7 +11,8 @@ During process creation in Windows, special system structures appear in the syst
 * TEB *
 * PEB_LDR_DATA
 * LDR_DATA_TABLE_ENTRY
-* RTL_USER_PROCESS_PARAMETERS etc.
+* RTL_USER_PROCESS_PARAMETERS
+* EPROCESS etc.
 
 The list of different structures is large and specific for each version of the operating system.
 
@@ -35,7 +36,7 @@ The program supports now:
 
 **The program does not support now Windows 2000,XP and Vista.** If you need structs for these OS use old versions of XNTSV.
 
-**The program does not support now kernel mode.** Because for new operating systems, you need to sign the driver to access the kernel. Certificates are very expensive. If you need kernel structs use old versions of XNTSV.
+**The program supports now kernel mode.** But you need sign driver with valid driver cert or use test cert. https://docs.microsoft.com/en-us/windows-hardware/drivers/install/how-to-test-sign-a-driver-package
 
 * Download: https://github.com/horsicq/xntsv/releases
 * How to run: https://github.com/horsicq/xntsv/blob/master/docs/RUN.md

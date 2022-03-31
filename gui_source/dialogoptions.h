@@ -28,6 +28,7 @@
 #include "searchsignaturesoptionswidget.h"
 #include "xhexviewoptionswidget.h"
 #include "xdisasmviewoptionswidget.h"
+#include "xdynstructsoptionswidget.h"
 #include "../global.h"
 
 namespace Ui {
@@ -52,6 +53,7 @@ private:
     SearchSignaturesOptionsWidget *g_pSearchSignaturesOptionsWidget;
     XHexViewOptionsWidget *g_pXHexViewOptionsWidget;
     XDisasmViewOptionsWidget *g_pXDisasmViewOptionsWidget;
+    XDynStructsOptionsWidget *g_pXDynStructsOptionsWidget;
     XOptions *g_pOptions;
 };
 

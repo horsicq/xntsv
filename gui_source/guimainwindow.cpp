@@ -47,6 +47,7 @@ GuiMainWindow::GuiMainWindow(QWidget *pParent) :
     SearchSignaturesOptionsWidget::setDefaultValues(&g_xOptions);
     XHexViewOptionsWidget::setDefaultValues(&g_xOptions);
     XDisasmViewOptionsWidget::setDefaultValues(&g_xOptions);
+    XDynStructsOptionsWidget::setDefaultValues(&g_xOptions);
 
 #ifdef Q_OS_WIN
     g_xOptions.addID(XOptions::ID_IODRIVER_FILENAME,"$app/xwiniodriver.sys");

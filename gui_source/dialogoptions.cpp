@@ -33,6 +33,7 @@ DialogOptions::DialogOptions(QWidget *pParent, XOptions *pOptions) :
     g_pSearchSignaturesOptionsWidget=new SearchSignaturesOptionsWidget(this);
     g_pXHexViewOptionsWidget=new XHexViewOptionsWidget(this);
     g_pXDisasmViewOptionsWidget=new XDisasmViewOptionsWidget(this);
+    g_pXDynStructsOptionsWidget=new XDynStructsOptionsWidget(this);
 
     ui->widgetOptions->setOptions(pOptions,X_APPLICATIONDISPLAYNAME);
 
@@ -47,6 +48,9 @@ DialogOptions::DialogOptions(QWidget *pParent, XOptions *pOptions) :
 
     ui->widgetOptions->addPage(g_pXDisasmViewOptionsWidget,tr("Disasm"));
     g_pXDisasmViewOptionsWidget->setOptions(pOptions);
+
+    ui->widgetOptions->addPage(g_pXDynStructsOptionsWidget,tr("Structs"));
+    g_pXDynStructsOptionsWidget->setOptions(pOptions);
 
     ui->widgetOptions->setCurrentPage(1);
 }
@@ -63,6 +67,7 @@ void DialogOptions::on_pushButtonOK_clicked()
     g_pSearchSignaturesOptionsWidget->save();
     g_pXHexViewOptionsWidget->save();
     g_pXDisasmViewOptionsWidget->save();
+    g_pXDynStructsOptionsWidget->save();
 
     if(g_pOptions->isRestartNeeded())
     {

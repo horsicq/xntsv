@@ -19,6 +19,13 @@ xcopy %X_SOURCE_PATH%\XStyles\qss %X_SOURCE_PATH%\release\%X_BUILD_NAME%\qss /E 
 xcopy %X_SOURCE_PATH%\XDynStructs\structs %X_SOURCE_PATH%\release\%X_BUILD_NAME%\structs /E /I
 xcopy %X_SOURCE_PATH%\signatures\crypto.db %X_SOURCE_PATH%\release\%X_BUILD_NAME%\signatures\
 
+if "%X_ARCH%" == "x86" (
+    xcopy %X_SOURCE_PATH%\XWinIODriver\driver_source\build\i386\xwiniodriver.sys %X_SOURCE_PATH%\release\%X_BUILD_NAME%\
+)
+if "%X_ARCH%" == "x64" (
+    xcopy %X_SOURCE_PATH%\XWinIODriver\driver_source\build\amd64\xwiniodriver.sys %X_SOURCE_PATH%\release\%X_BUILD_NAME%\
+)
+
 call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_library Qt5Widgets
 call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_library Qt5Gui
 call %X_SOURCE_PATH%\build_tools\windows.cmd deploy_qt_library Qt5Core
