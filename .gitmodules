@@ -118,3 +118,6 @@
 [submodule "XWinIODriver"]
 	path = XWinIODriver
 	url = https://github.com/horsicq/XWinIODriver
+[submodule "XInfoDB"]
+	path = XInfoDB
+	url = https://github.com/horsicq/XInfoDB
