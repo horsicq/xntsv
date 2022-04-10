@@ -16,7 +16,7 @@ During process creation in Windows, special system structures appear in the syst
 
 The list of different structures is large and specific for each version of the operating system.
 
-**You could easily add your oun structs (Edit structs/ARCH/custom.json)**
+**You could easily add your own structs (Edit structs/ARCH/custom.json)**
 
 Officially it is not fully documented and change in different Windows versions.
 
