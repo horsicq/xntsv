@@ -64,6 +64,7 @@ GuiMainWindow::GuiMainWindow(QWidget *pParent) :
     g_xShortcuts.addGroup(XShortcuts::GROUPID_STRINGS);
     g_xShortcuts.addGroup(XShortcuts::GROUPID_SIGNATURES);
     g_xShortcuts.addGroup(XShortcuts::GROUPID_MODULES);
+    g_xShortcuts.addGroup(XShortcuts::GROUPID_MEMORYMAP);
 
     g_xShortcuts.load();
 
