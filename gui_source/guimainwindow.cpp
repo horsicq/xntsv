@@ -19,29 +19,26 @@
  * SOFTWARE.
  */
 #include "guimainwindow.h"
+
 #include "ui_guimainwindow.h"
 
-GuiMainWindow::GuiMainWindow(QWidget *pParent) :
-    QMainWindow(pParent),
-    ui(new Ui::GuiMainWindow)
-{
+GuiMainWindow::GuiMainWindow(QWidget *pParent) : QMainWindow(pParent), ui(new Ui::GuiMainWindow) {
     ui->setupUi(this);
 
-    if(!XProcess::setDebugPrivilege(true))
-    {
-        QMessageBox::critical(this,tr("Error"),tr("Please run the program as an administrator"));
+    if (!XProcess::setDebugPrivilege(true)) {
+        QMessageBox::critical(this, tr("Error"), tr("Please run the program as an administrator"));
 
         exit(1);
     }
 
-    setWindowTitle(XOptions::getTitle(X_APPLICATIONDISPLAYNAME,X_APPLICATIONVERSION));
+    setWindowTitle(XOptions::getTitle(X_APPLICATIONDISPLAYNAME, X_APPLICATIONVERSION));
 
     g_xOptions.setName(X_OPTIONSFILE);
 
-    g_xOptions.addID(XOptions::ID_VIEW_STYLE,"Fusion");
-    g_xOptions.addID(XOptions::ID_VIEW_QSS,"");
-    g_xOptions.addID(XOptions::ID_VIEW_LANG,"System");
-    g_xOptions.addID(XOptions::ID_VIEW_STAYONTOP,false);
+    g_xOptions.addID(XOptions::ID_VIEW_STYLE, "Fusion");
+    g_xOptions.addID(XOptions::ID_VIEW_QSS, "");
+    g_xOptions.addID(XOptions::ID_VIEW_LANG, "System");
+    g_xOptions.addID(XOptions::ID_VIEW_STAYONTOP, false);
 
     StaticScanOptionsWidget::setDefaultValues(&g_xOptions);
     SearchSignaturesOptionsWidget::setDefaultValues(&g_xOptions);
@@ -50,8 +47,8 @@ GuiMainWindow::GuiMainWindow(QWidget *pParent) :
     XDynStructsOptionsWidget::setDefaultValues(&g_xOptions);
 
 #ifdef Q_OS_WIN
-    g_xOptions.addID(XOptions::ID_IODRIVER_FILENAME,"$app/xwiniodriver.sys");
-    g_xOptions.addID(XOptions::ID_IODRIVER_SERVICENAME,"XWINIODRIVER");
+    g_xOptions.addID(XOptions::ID_IODRIVER_FILENAME, "$app/xwiniodriver.sys");
+    g_xOptions.addID(XOptions::ID_IODRIVER_SERVICENAME, "XWINIODRIVER");
 #endif
 
     g_xOptions.load();
@@ -68,35 +65,31 @@ GuiMainWindow::GuiMainWindow(QWidget *pParent) :
 
     g_xShortcuts.load();
 
-    ui->widgetProcesses->setGlobal(&g_xShortcuts,&g_xOptions);
+    ui->widgetProcesses->setGlobal(&g_xShortcuts, &g_xOptions);
 
     ui->widgetProcesses->setActive(true);
 
     adjustWindow();
 }
 
-GuiMainWindow::~GuiMainWindow()
-{
+GuiMainWindow::~GuiMainWindow() {
     g_xOptions.save();
     g_xShortcuts.save();
 
     delete ui;
 }
 
-void GuiMainWindow::adjustWindow()
-{
+void GuiMainWindow::adjustWindow() {
     ui->widgetProcesses->adjustView();
 
     g_xOptions.adjustStayOnTop(this);
 }
 
-void GuiMainWindow::on_actionExit_triggered()
-{
+void GuiMainWindow::on_actionExit_triggered() {
     this->close();
 }
 
-void GuiMainWindow::on_actionShortcuts_triggered()
-{
+void GuiMainWindow::on_actionShortcuts_triggered() {
     DialogShortcuts dialogShortcuts(this);
 
     dialogShortcuts.setData(&g_xShortcuts);
@@ -106,16 +99,14 @@ void GuiMainWindow::on_actionShortcuts_triggered()
     adjustWindow();
 }
 
-void GuiMainWindow::on_actionOptions_triggered()
-{
-    DialogOptions dialogOptions(this,&g_xOptions);
+void GuiMainWindow::on_actionOptions_triggered() {
+    DialogOptions dialogOptions(this, &g_xOptions);
     dialogOptions.exec();
 
     adjustWindow();
 }
 
-void GuiMainWindow::on_actionAbout_triggered()
-{
+void GuiMainWindow::on_actionAbout_triggered() {
     DialogAbout dialogAbout(this);
     dialogAbout.exec();
 }

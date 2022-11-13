@@ -22,25 +22,25 @@
 #define DIALOGOPTIONS_H
 
 #include <QDialog>
-#include "xoptions.h"
-#include "xbinary.h"
-#include "staticscanoptionswidget.h"
+
+#include "../global.h"
 #include "searchsignaturesoptionswidget.h"
-#include "xhexviewoptionswidget.h"
+#include "staticscanoptionswidget.h"
+#include "xbinary.h"
 #include "xdisasmviewoptionswidget.h"
 #include "xdynstructsoptionswidget.h"
-#include "../global.h"
+#include "xhexviewoptionswidget.h"
+#include "xoptions.h"
 
 namespace Ui {
 class DialogOptions;
 }
 
-class DialogOptions : public QDialog
-{
+class DialogOptions : public QDialog {
     Q_OBJECT
 
 public:
-    explicit DialogOptions(QWidget *pParent,XOptions *pOptions);
+    explicit DialogOptions(QWidget *pParent, XOptions *pOptions);
     ~DialogOptions();
 
 private slots:
@@ -57,4 +57,4 @@ private:
     XOptions *g_pOptions;
 };
 
-#endif // DIALOGOPTIONS_H
+#endif  // DIALOGOPTIONS_H

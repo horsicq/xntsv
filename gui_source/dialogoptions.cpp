@@ -19,49 +19,45 @@
  * SOFTWARE.
  */
 #include "dialogoptions.h"
+
 #include "ui_dialogoptions.h"
 
-DialogOptions::DialogOptions(QWidget *pParent, XOptions *pOptions) :
-    QDialog(pParent),
-    ui(new Ui::DialogOptions)
-{
+DialogOptions::DialogOptions(QWidget *pParent, XOptions *pOptions) : QDialog(pParent), ui(new Ui::DialogOptions) {
     ui->setupUi(this);
 
-    this->g_pOptions=pOptions;
+    this->g_pOptions = pOptions;
 
-    g_pStaticScanOptionsWidget=new StaticScanOptionsWidget(this);
-    g_pSearchSignaturesOptionsWidget=new SearchSignaturesOptionsWidget(this);
-    g_pXHexViewOptionsWidget=new XHexViewOptionsWidget(this);
-    g_pXDisasmViewOptionsWidget=new XDisasmViewOptionsWidget(this);
-    g_pXDynStructsOptionsWidget=new XDynStructsOptionsWidget(this);
+    g_pStaticScanOptionsWidget = new StaticScanOptionsWidget(this);
+    g_pSearchSignaturesOptionsWidget = new SearchSignaturesOptionsWidget(this);
+    g_pXHexViewOptionsWidget = new XHexViewOptionsWidget(this);
+    g_pXDisasmViewOptionsWidget = new XDisasmViewOptionsWidget(this);
+    g_pXDynStructsOptionsWidget = new XDynStructsOptionsWidget(this);
 
-    ui->widgetOptions->setOptions(pOptions,X_APPLICATIONDISPLAYNAME);
+    ui->widgetOptions->setOptions(pOptions, X_APPLICATIONDISPLAYNAME);
 
-    ui->widgetOptions->addPage(g_pStaticScanOptionsWidget,tr("Scan"));
+    ui->widgetOptions->addPage(g_pStaticScanOptionsWidget, tr("Scan"));
     g_pStaticScanOptionsWidget->setOptions(pOptions);
 
-    ui->widgetOptions->addPage(g_pSearchSignaturesOptionsWidget,tr("Signatures"));
+    ui->widgetOptions->addPage(g_pSearchSignaturesOptionsWidget, tr("Signatures"));
     g_pSearchSignaturesOptionsWidget->setOptions(pOptions);
 
-    ui->widgetOptions->addPage(g_pXHexViewOptionsWidget,tr("Hex"));
+    ui->widgetOptions->addPage(g_pXHexViewOptionsWidget, tr("Hex"));
     g_pXHexViewOptionsWidget->setOptions(pOptions);
 
-    ui->widgetOptions->addPage(g_pXDisasmViewOptionsWidget,tr("Disasm"));
+    ui->widgetOptions->addPage(g_pXDisasmViewOptionsWidget, tr("Disasm"));
     g_pXDisasmViewOptionsWidget->setOptions(pOptions);
 
-    ui->widgetOptions->addPage(g_pXDynStructsOptionsWidget,tr("Structs"));
+    ui->widgetOptions->addPage(g_pXDynStructsOptionsWidget, tr("Structs"));
     g_pXDynStructsOptionsWidget->setOptions(pOptions);
 
     ui->widgetOptions->setCurrentPage(1);
 }
 
-DialogOptions::~DialogOptions()
-{
+DialogOptions::~DialogOptions() {
     delete ui;
 }
 
-void DialogOptions::on_pushButtonOK_clicked()
-{
+void DialogOptions::on_pushButtonOK_clicked() {
     ui->widgetOptions->save();
     g_pStaticScanOptionsWidget->save();
     g_pSearchSignaturesOptionsWidget->save();
@@ -69,15 +65,13 @@ void DialogOptions::on_pushButtonOK_clicked()
     g_pXDisasmViewOptionsWidget->save();
     g_pXDynStructsOptionsWidget->save();
 
-    if(g_pOptions->isRestartNeeded())
-    {
-        QMessageBox::information(this,tr("Information"),tr("Please restart the application"));
+    if (g_pOptions->isRestartNeeded()) {
+        QMessageBox::information(this, tr("Information"), tr("Please restart the application"));
     }
 
     this->close();
 }
 
-void DialogOptions::on_pushButtonCancel_clicked()
-{
+void DialogOptions::on_pushButtonCancel_clicked() {
     this->close();
 }

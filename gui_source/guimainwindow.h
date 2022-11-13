@@ -21,35 +21,32 @@
 #ifndef GUIMAINWINDOW_H
 #define GUIMAINWINDOW_H
 
-#include "../global.h"
-
-#include <QMainWindow>
-#include <QLibrary>
-#include <QMessageBox>
-#include <QTextBrowser>
-#include <QUrl>
 #include <QDir>
 #include <QFileDialog>
+#include <QLibrary>
+#include <QMainWindow>
+#include <QMessageBox>
 #include <QScrollBar>
+#include <QTextBrowser>
+#include <QUrl>
 
-#include "xprocess.h"
-#include "xoptions.h"
-#include "xshortcuts.h"
+#include "../global.h"
+#include "dialogabout.h"
 #include "dialogoptions.h"
 #include "dialogshortcuts.h"
-#include "dialogabout.h"
+#include "xoptions.h"
+#include "xprocess.h"
+#include "xshortcuts.h"
 
-namespace Ui
-{
+namespace Ui {
 class GuiMainWindow;
 }
 
-class GuiMainWindow : public QMainWindow
-{
+class GuiMainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
-    explicit GuiMainWindow(QWidget *pParent=nullptr);
+    explicit GuiMainWindow(QWidget *pParent = nullptr);
     ~GuiMainWindow();
 
 private slots:
@@ -67,4 +64,4 @@ private:
     XShortcuts g_xShortcuts;
 };
 
-#endif // GUIMAINWINDOW_H
+#endif  // GUIMAINWINDOW_H
