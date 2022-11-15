@@ -22,7 +22,8 @@
 
 #include "ui_guimainwindow.h"
 
-GuiMainWindow::GuiMainWindow(QWidget *pParent) : QMainWindow(pParent), ui(new Ui::GuiMainWindow) {
+GuiMainWindow::GuiMainWindow(QWidget *pParent) : QMainWindow(pParent), ui(new Ui::GuiMainWindow)
+{
     ui->setupUi(this);
 
     if (!XProcess::setDebugPrivilege(true)) {
@@ -72,24 +73,28 @@ GuiMainWindow::GuiMainWindow(QWidget *pParent) : QMainWindow(pParent), ui(new Ui
     adjustWindow();
 }
 
-GuiMainWindow::~GuiMainWindow() {
+GuiMainWindow::~GuiMainWindow()
+{
     g_xOptions.save();
     g_xShortcuts.save();
 
     delete ui;
 }
 
-void GuiMainWindow::adjustWindow() {
+void GuiMainWindow::adjustWindow()
+{
     ui->widgetProcesses->adjustView();
 
     g_xOptions.adjustStayOnTop(this);
 }
 
-void GuiMainWindow::on_actionExit_triggered() {
+void GuiMainWindow::on_actionExit_triggered()
+{
     this->close();
 }
 
-void GuiMainWindow::on_actionShortcuts_triggered() {
+void GuiMainWindow::on_actionShortcuts_triggered()
+{
     DialogShortcuts dialogShortcuts(this);
 
     dialogShortcuts.setData(&g_xShortcuts);
@@ -99,14 +104,16 @@ void GuiMainWindow::on_actionShortcuts_triggered() {
     adjustWindow();
 }
 
-void GuiMainWindow::on_actionOptions_triggered() {
+void GuiMainWindow::on_actionOptions_triggered()
+{
     DialogOptions dialogOptions(this, &g_xOptions);
     dialogOptions.exec();
 
     adjustWindow();
 }
 
-void GuiMainWindow::on_actionAbout_triggered() {
+void GuiMainWindow::on_actionAbout_triggered()
+{
     DialogAbout dialogAbout(this);
     dialogAbout.exec();
 }
