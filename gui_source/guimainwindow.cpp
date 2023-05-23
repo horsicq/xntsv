@@ -41,7 +41,7 @@ GuiMainWindow::GuiMainWindow(QWidget *pParent) : QMainWindow(pParent), ui(new Ui
     g_xOptions.addID(XOptions::ID_VIEW_LANG, "System");
     g_xOptions.addID(XOptions::ID_VIEW_STAYONTOP, false);
 
-    StaticScanOptionsWidget::setDefaultValues(&g_xOptions);
+    NFDOptionsWidget::setDefaultValues(&g_xOptions);
     SearchSignaturesOptionsWidget::setDefaultValues(&g_xOptions);
     XHexViewOptionsWidget::setDefaultValues(&g_xOptions);
     XDisasmViewOptionsWidget::setDefaultValues(&g_xOptions);

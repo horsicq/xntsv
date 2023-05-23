@@ -25,7 +25,7 @@
 
 #include "../global.h"
 #include "searchsignaturesoptionswidget.h"
-#include "staticscanoptionswidget.h"
+#include "nfdoptionswidget.h"
 #include "xbinary.h"
 #include "xdisasmviewoptionswidget.h"
 #include "xdynstructsoptionswidget.h"
@@ -49,7 +49,7 @@ private slots:
 
 private:
     Ui::DialogOptions *ui;
-    StaticScanOptionsWidget *g_pStaticScanOptionsWidget;
+    NFDOptionsWidget *g_pNFDOptionsWidget;
     SearchSignaturesOptionsWidget *g_pSearchSignaturesOptionsWidget;
     XHexViewOptionsWidget *g_pXHexViewOptionsWidget;
     XDisasmViewOptionsWidget *g_pXDisasmViewOptionsWidget;
