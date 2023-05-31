@@ -37,6 +37,7 @@
 #include "xoptions.h"
 #include "xprocess.h"
 #include "xshortcuts.h"
+#include "xyara.h"
 
 namespace Ui {
 class GuiMainWindow;

@@ -32,6 +32,8 @@ GuiMainWindow::GuiMainWindow(QWidget *pParent) : QMainWindow(pParent), ui(new Ui
         exit(1);
     }
 
+    XYara::initialize();
+
     setWindowTitle(XOptions::getTitle(X_APPLICATIONDISPLAYNAME, X_APPLICATIONVERSION));
 
     g_xOptions.setName(X_OPTIONSFILE);
@@ -79,6 +81,8 @@ GuiMainWindow::~GuiMainWindow()
     g_xShortcuts.save();
 
     delete ui;
+
+    XYara::finalize();
 }
 
 void GuiMainWindow::adjustWindow()
