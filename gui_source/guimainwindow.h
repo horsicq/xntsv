@@ -37,7 +37,9 @@
 #include "xoptions.h"
 #include "xprocess.h"
 #include "xshortcuts.h"
+#ifdef USE_YARA
 #include "xyara.h"
+#endif
 
 namespace Ui {
 class GuiMainWindow;
@@ -56,7 +58,6 @@ private slots:
     void on_actionExit_triggered();
     void on_actionShortcuts_triggered();
     void on_actionOptions_triggered();
-
     void on_actionAbout_triggered();
 
 private:
