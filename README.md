@@ -31,6 +31,7 @@ The program supports now:
 * Windows 8.1
 * Windows Server 2016
 * Windows Server 2019
+* Windows Server 2022
 * Windows 10 (all builds)
 * Windows 11 (build 22000)
 
