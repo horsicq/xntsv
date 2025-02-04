@@ -103,9 +103,6 @@
 [submodule "XPDF"]
 	path = XPDF
 	url = https://github.com/horsicq/XPDF
-[submodule "XDisasm"]
-	path = XDisasm
-	url = https://github.com/horsicq/XDisasm
 [submodule "QHexView"]
 	path = QHexView
 	url = https://github.com/horsicq/QHexView
